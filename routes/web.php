@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// relasi one to one untuk table user dan phone
+Route::get('/', [UserController::class, 'index']);
 
-Route::get('/users', [UserController::class, 'index']);
+// relasi one to many untuk table post dan comment
+Route::get('/posts', [PostController::class, 'index']);
