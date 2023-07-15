@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// relasi one to one untuk table user dan phone
+// relasi one to one untuk table user dan phone, untuk many to many ada 3 table user, roles, user_roles=>table pivot
 Route::get('/', [UserController::class, 'index']);
 
 // relasi one to many untuk table post dan comment
